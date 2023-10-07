@@ -1,4 +1,4 @@
-import { mailService, userService } from '../services';
+import { mailService } from '../services';
 import { APP_NAME, SITE_LINK } from '../constants';
 import logger from '../helpers/logger';
 const fs = require('fs');
@@ -47,37 +47,6 @@ class Controller {
 
     return { info };
   }
-
-  // Send the reset email
-  async sendPasswordResetEmail(email: string, token: string) {
-    let user = await userService.findOne({ email });
-    if (!user) {
-      console.log(`User with email: ${email} does not exist`);
-      return false;
-    }
-
-    const resetLink = `${SITE_LINK}auth/reset-password/${token}`;
-    const data = {
-      email: email,
-      passwordResetLink: resetLink,
-    };
-
-    const renderedEmail = await renderMailTemplate('src/templates/password_reset.html', data);
-
-    if (!renderedEmail) {
-      console.log('Mail template not found');
-      return false;
-    }
-
-    // Send the email
-    const info = await mailService.sendMail(email, renderedEmail, 'Password reset');
-
-    console.log(`Password reset email sent to: ${email}`);
-
-    return { info };
-  }
-
-
 }
 
 export const mailController = new Controller();

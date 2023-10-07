@@ -1,19 +1,11 @@
 import dotenv from 'dotenv';
 dotenv.config({ path: './.env' });
 // export const CORS_ORIGIN = process.env.CORS_ORIGIN || 'http://localhost:3000';
-export const ACCESS_TOKEN_SECRET = process.env.ACCESS_TOKEN_SECRET || 'access-token-secret';
 export const APP_NAME = process.env.APP_NAME || 'Chatbot-API';
 export const CORS_ORIGIN = process.env.CORS_ORIGIN || '*';
-export const DB_NAME = process.env.MONGO_DB_NAME || 'chatbot';
-export const DB_CONNECTION_STRING =
-  process.env.MONGO_DB_URL + DB_NAME || 'mongodb://localhost:27017/' + DB_NAME;
-export const JWT_SECRET = process.env.JWT_SECRET || 'jwt-secret';
 export const MAIL_ADDRESS = process.env.MAIL_ADDRESS || 'michaelorji@mail.com';
 export const MAIL_PASSWORD = process.env.MAIL_PASSWORD || 'xxxx';
-export const REFRESH_TOKEN_SECRET = process.env.REFRESH_TOKEN_SECRET || 'refresh-token-secret';
 export const SITE_LINK = process.env.SITE_LINK || 'http://localhost:5000';
-export const PUBLIC_VAPID_KEY = process.env.PUBLIC_VAPID_KEY || 'xxxx';
-export const PRIVATE_VAPID_KEY = process.env.PRIVATE_VAPID_KEY || 'xxxx';
 
 export const STATUS_CODES = {
   SUCCESS: '10000',
@@ -69,13 +61,4 @@ export const LINKS = {
   WHATSAPP_CALL: 'https://wa.me/2349999999999',
   WHATSAPP_CHAT: 'https://wa.me/2349999999999',
   ZOOM: 'https://zoom.us/j/9999999999',
-};
-
-export const DATABASES = {
-  USER: 'user',
-  RESET_TOKEN: 'reset_token',
-  PROJECT: 'project',
-  PROJECT_TASK: 'project_task',
-  COMMENT: 'comment',
-  NOTIFICATION: 'notification',
 };
