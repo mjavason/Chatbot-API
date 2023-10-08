@@ -45,7 +45,7 @@ To set up and run the Ntachi Osa Restaurant Chatbot project locally, follow thes
 1. Clone the repository to your local machine:
 
    ```shell
-   git clone https://github.com/your-username/ntachi-osa-chatbot.git
+   git clone https://github.com/mjavason/ntachi-osa-chatbot.git
    ```
 
 2. Navigate to the project directory:
