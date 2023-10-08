@@ -20,13 +20,13 @@ router.post(
 
       // Set a timeout of 2 seconds (2000 milliseconds)
       setTimeout(function () {
-        console.log('This code will run after 2 seconds.');
+        // console.log('This code will run after 2 seconds.');
+          if (!data) return InternalErrorResponse(res);
+        return SuccessResponse(res, { reply: data });
       }, 2000);
 
-      //   if (!data) return InternalErrorResponse(res);
 
       //   return res.status(200).send(`<p>${data}</p>`);
-      return SuccessResponse(res, { reply: data });
     } else {
       // Handle the case where 'message' is missing in req.query
       return BadRequestResponse(res, 'Message is missing in the query parameters.');
