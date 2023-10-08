@@ -3,5 +3,4 @@
 // export = './whatever'
 // export { whatever } from './whatever';
 
-export { authValidation } from './auth.validation';
 export { robotValidation } from './robot.validation';
