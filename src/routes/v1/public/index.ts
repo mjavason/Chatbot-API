@@ -18,7 +18,12 @@ router.post(
     if (req.body && req.body.question) {
       const data = await demo(req.body.question);
 
-    //   if (!data) return InternalErrorResponse(res);
+      // Set a timeout of 2 seconds (2000 milliseconds)
+      setTimeout(function () {
+        console.log('This code will run after 2 seconds.');
+      }, 2000);
+
+      //   if (!data) return InternalErrorResponse(res);
 
       //   return res.status(200).send(`<p>${data}</p>`);
       return SuccessResponse(res, { reply: data });
