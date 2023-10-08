@@ -38,9 +38,61 @@ Here are some examples of how you can interact with the chatbot:
 
 Feel free to start a conversation with the chatbot by sending a message or question related to Ntachi Osa Restaurant. The chatbot is here to provide you with the information you need.
 
+## Setting Up the Project
+
+To set up and run the Ntachi Osa Restaurant Chatbot project locally, follow these steps:
+
+1. Clone the repository to your local machine:
+
+   ```shell
+   git clone https://github.com/your-username/ntachi-osa-chatbot.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```shell
+   cd ntachi-osa-chatbot
+   ```
+
+3. Install the required dependencies:
+
+   ```shell
+   npm install
+   ```
+
+4. Set up the environment variables by creating a `.env` file in the root directory. Replace the placeholders with your actual values. Refer to the "Environment Variables" section below for details.
+
+5. Start the server:
+
+   ```shell
+   npm start
+   ```
+
+The chatbot will be accessible at `http://localhost:5000` by default.
+
+## Environment Variables
+
+Before running the chatbot, ensure you have set up the following environment variables in your `.env` file:
+
+```env
+ACCESS_TOKEN_SECRET=your-access-token-secret
+API_DOCUMENTATION_URL=doc.xxx.com
+APP_NAME=TemplateApp
+JWT_SECRET=user
+MAIL_ADDRESS=xxxx@mail.com
+MAIL_PASSWORD=xxxx
+MONGODB_URL=xxxx
+MONGO_DB_NAME=xxxx
+REFRESH_TOKEN_SECRET=xxxx
+SITE_LINK=xxxx
+USERNAME=user@mail.com
+```
+
+Replace the placeholders with your actual secret keys, URLs, and credentials.
+
 ## Documentation
 
-For detailed documentation on how to use the Site Status Checker API and its endpoints, refer to the [API Documentation](https://documenter.getpostman.com/view/29278179/2s9YJgTLWN).
+For detailed documentation on how to use the Ntachi Osa Restaurant Chatbot and its features, refer to the [API Documentation](https://documenter.getpostman.com/view/29278179/2s9YJgTLWN).
 
 ## Contributing
 
