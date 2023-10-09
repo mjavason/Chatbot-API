@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import { robotValidation } from '../../../validation';
-import { processRequestQuery } from 'zod-express-middleware';
+import { processRequestBody, processRequestQuery } from 'zod-express-middleware';
 import { demo } from '../../../controllers';
 import {
   BadRequestResponse,
@@ -12,7 +12,7 @@ const router = express.Router();
 
 router.post(
   '/robot',
-  processRequestQuery(robotValidation.ask.body),
+  processRequestBody(robotValidation.ask.body),
   async (req: Request, res: Response) => {
     // Ensure that req.query is defined and contains the 'message' property
     if (req.body && req.body.question) {

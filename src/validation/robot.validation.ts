@@ -4,10 +4,10 @@ class RobotValidation {
   // Validation schema for updating an existing robot
   ask = {
     params: z.object({
-      robotName: z.string(),
+      question: z.string(),
     }),
     body: z.object({
-      question: z.string().optional(),
+      question: z.string(),
     }),
   };
 
