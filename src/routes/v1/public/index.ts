@@ -29,7 +29,7 @@ router.post(
       //   return res.status(200).send(`<p>${data}</p>`);
     } else {
       // Handle the case where 'message' is missing in req.query
-      return BadRequestResponse(res, 'Message is missing in the query parameters.');
+      return BadRequestResponse(res, 'Message is missing in the body parameters.');
     }
   },
 );
