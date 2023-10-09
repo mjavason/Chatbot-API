@@ -1,6 +1,6 @@
 import express, { Request, Response } from 'express';
 import { robotValidation } from '../../../validation';
-import { processRequestBody, processRequestQuery } from 'zod-express-middleware';
+import { processRequestBody } from 'zod-express-middleware';
 import { demo } from '../../../controllers';
 import {
   BadRequestResponse,
@@ -14,22 +14,20 @@ router.post(
   '/robot',
   processRequestBody(robotValidation.ask.body),
   async (req: Request, res: Response) => {
-    // Ensure that req.query is defined and contains the 'message' property
+    // Ensure that req.body is defined and contains the 'text' property
     if (req.body && req.body.question) {
       const data = await demo(req.body.question);
 
       // Set a timeout of 2 seconds (2000 milliseconds)
       setTimeout(function () {
         // console.log('This code will run after 2 seconds.');
-          if (!data) return InternalErrorResponse(res);
+        if (!data) return InternalErrorResponse(res);
+
         return SuccessResponse(res, { reply: data });
       }, 2000);
-
-
-      //   return res.status(200).send(`<p>${data}</p>`);
     } else {
-      // Handle the case where 'message' is missing in req.query
-      return BadRequestResponse(res, 'Message is missing in the body parameters.');
+      // Handle the case where 'text' is missing in req.body
+      return BadRequestResponse(res, 'Text is missing in the body parameters.');
     }
   },
 );
